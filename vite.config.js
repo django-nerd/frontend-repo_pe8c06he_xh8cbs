@@ -1,14 +1,11 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [vue()],
   optimizeDeps: {
-    // Exclude packages that shouldn't be pre-bundled
     exclude: [],
-    // Entries point for dependency pre-bundling
-    entries: ['./src/**/*.{js,jsx,ts,tsx}'],
-    // Hold the first optimizeDeps run until all dependencies are discovered
+    entries: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
     holdUntilCrawlEnd: true
   },
   server: {
